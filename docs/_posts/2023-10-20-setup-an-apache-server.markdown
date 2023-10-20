@@ -20,7 +20,7 @@ Feel free to jump around if you need to skip a step - you could also use your ow
 
 # Sign up for an Always Free Account on Oracle Cloud
 If you don't have an account, you'll need to sign up for an "always free" account in Oracle Cloud. Go to https://www.oracle.com/cloud/free/ and click on "Start for free".
-![Oracle Sign Up](/assets/signup0.png){:class="img-responsive"}
+![Oracle Sign Up](/assets/signup0.png){:class="img-responsive" style="border: 5px solid #555;"}
 
 Fill out the form, make sure that you are a human and not a robot and then click on "Verify my email".
 ![Oracle Sign Up](/assets/signup1.png){:class="img-responsive"}
