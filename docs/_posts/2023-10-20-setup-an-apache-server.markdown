@@ -17,3 +17,7 @@ A custom domain is a crucial element for any online presence. It allows you to p
 Throughout this guide, we will delve into the step-by-step procedures to bring these elements together. By the end of this tutorial, you will have a fully functional Apache Server hosted on Oracle Cloud, accessible via your custom domain. Whether you're a seasoned developer or a novice looking to establish an online presence, this guide will provide you with the knowledge and skills necessary to get your web server up and running efficiently. Let's embark on this journey to create a secure, reliable, and customized web hosting environment.
 
 Feel free to jump around if you need to skip a step - you could also use your own domain system, but for this guide I will stick with duckdns.
+
+# Sign up for an Always Free Account on Oracle Cloud
+If you don't have an account, you'll need to sign up for an "always free" account in Oracle Cloud. Go to https://www.oracle.com/cloud/free/ and click on "Start for free".
+![](../src/signup.png)
