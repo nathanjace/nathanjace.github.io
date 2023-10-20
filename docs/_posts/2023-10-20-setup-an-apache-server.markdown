@@ -20,17 +20,30 @@ Feel free to jump around if you need to skip a step - you could also use your ow
 
 # Sign up for an Always Free Account on Oracle Cloud
 If you don't have an account, you'll need to sign up for an "always free" account in Oracle Cloud. Go to https://www.oracle.com/cloud/free/ and click on "Start for free".
+
 ![Oracle Sign Up](/assets/signup0.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
 Fill out the form, make sure that you are a human and not a robot and then click on "Verify my email".
-![Oracle Sign Up](/assets/signup1.png){:class="img-responsive"}
+
+![Oracle Sign Up](/assets/signup1.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
 Continue with the sign up process by filling out the form and clicking on "Continue" at the end of the page.
 Make sure to click on Individual under Customer Type, and then to pick a name that you will remember for your Cloud Account Name.
-![Oracle Sign Up](/assets/signup2.png){:class="img-responsive"}
+
+![Oracle Sign Up](/assets/signup2.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
 You will then be asked to insert your Address Information and to verify your phone number.
-![Oracle Sign Up](/assets/signup3.png){:class="img-responsive"}
+
+![Oracle Sign Up](/assets/signup3.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
 You then will have to "Add a payment verification method". It's important to notice that "You won't be charged unless you elect to upgrade the account". You won't be charged unless you want more out of your account, so don't worry about it.
-![Oracle Sign Up](/assets/signup4.png){:class="img-responsive"}
+
+![Oracle Sign Up](/assets/signup4.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Once you've added a payment verification method, you are done with the signup process! The only thing left to do is to agree to the terms and conditions and to click on "Start my free trial".
+
+![Oracle Sign Up](/assets/signup5.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+It might take a while for your account to be created. Just be patient!
+
+# Create a Virtual Machine Instance
