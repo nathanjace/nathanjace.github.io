@@ -21,15 +21,15 @@
 title: IT&C 210A
 email: natejace@byu.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Simple blog posts page for IT&C 210A.
+  Simple blog page for IT&C 210A.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  nathanjace
 
 # Build settings
 theme: minima
-# plugins:
-#   - jekyll-feed
+plugins:
+  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
