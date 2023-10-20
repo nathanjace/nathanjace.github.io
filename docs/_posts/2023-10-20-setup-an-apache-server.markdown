@@ -44,6 +44,6 @@ Once you've added a payment verification method, you are done with the signup pr
 
 ![Oracle Sign Up](/assets/signup5.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
-It might take a while for your account to be created. Just be patient!
+It might take a while for your account to be created. Just be patient! Once it will be finilized you will receive an email saying that everything went correctly.
 
 # Create a Virtual Machine Instance
