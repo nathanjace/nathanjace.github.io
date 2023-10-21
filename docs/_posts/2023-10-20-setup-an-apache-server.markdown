@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting up an Apache Server with Oracle Cloud and a custom domain"
-date:   2023-10-20 21:00:00 -0600
+date:   2023-10-20 13:30:00 -0600
 categories: IT&C 210A update
 ---
 ## Introduction
