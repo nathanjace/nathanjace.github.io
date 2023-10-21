@@ -105,3 +105,10 @@ And that's it! You are in your VM! You should see something like this:
 ![SSH](/assets/ssh0.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
 In this case I don't mind sharing my IPv4 address, since it's simply used for internal services I have running on my VM. 
+You run the following command to get all caught up with the latest updates:
+
+{% highlight ruby %}
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+{% endhighlight %}
