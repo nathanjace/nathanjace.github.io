@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting up an Apache Server with Oracle Cloud and a custom domain"
-date:   2023-10-20 13:03:30 -0600
+date:   2023-10-20 21:00:00 -0600
 categories: IT&C 210A update
 ---
 ## Introduction
@@ -19,7 +19,7 @@ Throughout this guide, we will delve into the step-by-step procedures to bring t
 Feel free to jump around if you need to skip a step - you could also use your own domain system, but for this guide I will stick with duckdns.
 
 # Sign up for an Always Free Account on Oracle Cloud
-If you don't have an account, you'll need to sign up for an "always free" account in Oracle Cloud. Go to https://www.oracle.com/cloud/free/ and click on "Start for free".
+If you don't have an account, you'll need to sign up for an "always free" account in Oracle Cloud. Go to [https://www.oracle.com/cloud/free/] and click on "Start for free".
 
 ![Oracle Sign Up](/assets/signup0.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
@@ -87,7 +87,7 @@ To connect to the just created server we will need to use SSH. If you are on Win
 First, we'll need to change the permissions of the private key we just downloaded. To do so, run the following command:
 
 {% highlight ruby %}
-```bash
+```sh
 chmod 400 <path_to_your_private_key>
 ```
 {% endhighlight %}
@@ -95,7 +95,7 @@ chmod 400 <path_to_your_private_key>
 Then, we'll need to connect to the VM. To do so, run the following command:
 
 {% highlight ruby %}
-```bash
+```sh
 ssh -i <path_to_your_private_key> ubuntu@<your_public_ipv4_address>
 ```
 {% endhighlight %}
@@ -108,7 +108,82 @@ In this case I don't mind sharing my IPv4 address, since it's simply used for in
 You run the following command to get all caught up with the latest updates:
 
 {% highlight ruby %}
-```bash
+```sh
 sudo apt update && sudo apt upgrade -y
 ```
 {% endhighlight %}
+
+# Install Apache
+Now that we are all caught up with the latest updates, we can install Apache. To do so, run the following command:
+
+{% highlight ruby %}
+```sh
+sudo apt install apache2
+```
+{% endhighlight %}
+
+You can check your server's state with `sudo service apache2 <option>`, where `<option>` can be `{start|stop|graceful-stop|restart|reload|force-reload|status}`. It's easy to understand what each command does.
+
+Start your apache2 service and check its status with the following two commands:
+
+{% highlight ruby %}
+```sh
+sudo service apache2 start
+```
+```sh
+sudo service apache2 status
+```
+{% endhighlight %}
+
+When you install and configure apache2, it will automatically open a port in your server (usually 80 for HTTP and 443 for HTTPS) from which you will access the webpage you want to host. If it doesn't, Ubuntu comes with a pretty nifty service: a firewall. To open the port 80 and 443, run the following command:
+
+{% highlight ruby %}
+```sh
+sudo ufw enable
+```
+```sh
+sudo ufw allow 80,443/tcp
+```
+```sh
+sudo ufw reload
+```
+{% endhighlight %}
+
+# Open Firewall and Security List Ports
+IMPORTANT: If you don't do this, you won't be able to access your webpage from the outside world, even if you opened the ports on your ubuntu server.
+
+Back to the Oracle Cloud Console, under your VM instance detail page you were in previously, scroll down again until you find "Primary VNIC". 
+
+![Primary VNIC](/assets/vm7.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Click on public subnet-`<name of your subnet>` abd then click, under "Security Lists", "Default Security List for `<name of your subnet>`".
+
+Since 80 and 443 are used all the times in networking, you might see them already there. If not, click on "Add Ingress Rules" and add them. Under "Source CIDR" you can put 0.0.0.0/0 to allow access from anywhere. Select TCP as the "IP Protocol". Under "Destination Port Range" you can put 80,443. Finally, click on "Add Ingress Rules".
+
+![Security List](/assets/ports0.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+# Set up a domain name
+For this guide we will use a pretty straighforward and easy method to assign a domain name to our server. We will use duckdns. [Duck DNS](https://www.duckdns.org/) is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation because it uses a cron job to renew your IP address automatically.
+
+Go to [https://www.duckdns.org/] and click on one of the various "Sign in with..." buttons. PSA: "use reddit" is discontinued, so anything but that is fine.
+
+This is what the screen should look like:
+
+![Duck DNS](/assets/dns0.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Under "domains" chose a sub domain for your server, and then click on "add domain".
+If everything went well and the sub domain is available, you should see something like this:
+
+![Duck DNS](/assets/dns1.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Click on "install" and then keep "linux cron" as the selected "Operating Systems". Choose your subdomain and follow the instructions carefully.
+Once you get to the "what now?" section, you can either do what they say, or if you don't really mind, you can leave it and be just fine. 
+
+## Summary
+Congratulations! You have successfully set up a Live Apache Server with Oracle Cloud and a custom domain. You can now host your own website or web application on your own server. You can also use this guide as a reference for future projects involving Apache Servers, Oracle Cloud, and custom domains. Remember that right now, if you try to connect to your server through your domain, you will see a premade page from Apache. You can change that in any way or form you want by editing the files in /var/www/html or by using your own web application.
+
+# Additional Resources
+- [Oracle Cloud Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm): This website contains all the documentation you will ever need for Oracle Cloud. It's good to know but not fundamental for this guide.
+- [Apache HTTP Server Documentation](https://httpd.apache.org/docs/): Really comprehensive guide on how to use Apache. If you have any doubts on any configuration of the service, this is the place to go.
+- [Duck DNS Documentation](https://www.duckdns.org/spec.jsp): One of the easiest yet most powerful documentation I've ever seen. It's really easy to understand and it's really well written.
+- [BYU ITC 210](https://github.com/BYU-ITC-210/BYU-ITC-210.github.io): This is the repository for the ITC 210 class at BYU. It contains a lot of useful information, especially if you are interested in taking that class in the future. It's thank to this class that I learned how to use Jekyll, markdown, how to setup an apache2 server, and how to create a website from scratch, using HTML, CSS, JavaScript, and php.
