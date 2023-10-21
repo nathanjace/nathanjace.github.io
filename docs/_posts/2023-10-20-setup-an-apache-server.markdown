@@ -47,3 +47,33 @@ Once you've added a payment verification method, you are done with the signup pr
 It might take a while for your account to be created. Just be patient! Once it will be finilized you will receive an email saying that everything went correctly.
 
 # Create a Virtual Machine Instance
+Once you have your account, you will need to create a Virtual Machine Instance. To do so, go to the Oracle Cloud Console and, under "Lunch Resources" click on "Create a VM instance".
+
+![Oracle VM Creation](/assets/vm0.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Give your instance a name and leave root as the compartment. Choose any "Availability domain", it doesn't really matter for us.
+
+![Oracle VM Creation](/assets/vm1.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Select "Edit" under "Image and shape" and change to whatever OS you prefer. Make sure that it says "Always Free-eligible" as you select the OS. In my case I am going to use Canonical Ubuntu 20.04. Under "Shape" I strongly advise you to select "VM.Standard.A1.Flex" as it is the only one that is free. Also ander "Shape name" you can select a maximum number of 4 OCPUs and a maximum number of 24 GB or RAM. I would suggest to play with it - as long as it sayas "Always Free-eligible" you are good to go.
+
+![Oracle VM Creation](/assets/vm2.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Next, we'll need to create a Virtual Cloud Network for our machine to work on. Under Primary VNIC infromation, and under "Primary network", select "Create Virtual Cloud Network". Give it a name and leave the rest as default. 
+
+![Oracle VM Creation](/assets/vm3.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Under "Primary VNIC IP addresses", leave the default options as shown below.
+
+![Oracle VM Creation](/assets/vm4.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+The next step will be very very important. We'll need to associate a SSH key pair to the virtual machine. If you know what you're doing, go on and upload your public key. If not, leave "Generate a key pair for me" and select "Save private key". It's fondamental that you keep this key safe in your computer or wherever you may like.
+
+![Oracle VM Creation](/assets/vm5.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+Uncheck "Use in-transit encryption" (if you want), under "Boot volume" and finally click on "Create".
+
+You will be redirected to a page with the details of the VM and for a couple of minute you will see the status as "Provisioning". Once it's done, you will see the status as "Running".
+
+![Oracle VM Creation](/assets/vm6.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
