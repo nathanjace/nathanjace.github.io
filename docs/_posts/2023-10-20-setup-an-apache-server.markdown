@@ -77,3 +77,19 @@ You will be redirected to a page with the details of the VM and for a couple of 
 
 ![Oracle VM Creation](/assets/vm6.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
 
+Once it's up and running, scroll down until you find "Primary VNIC" and mark down the Public IPv4 address. You will need this to connect to your VM through SSH.
+
+![Oracle VM Creation](/assets/vm7.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+# Connect to your VM through SSH
+To connect to the just created server we will need to use SSH. If you are on Windows, use PowerShell or WSL, if you're on MacOS or Linux, simply use your favorite terminal. 
+
+First, we'll need to change the permissions of the private key we just downloaded. To do so, run the following command:
+
+{% highlight ruby %}
+```bash
+chmod 400 <path_to_your_private_key>
+```
+{% endhighlight %}
+
+Then, we'll need to connect to the VM. To do so, run the following command:
