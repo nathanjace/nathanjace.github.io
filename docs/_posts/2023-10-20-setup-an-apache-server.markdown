@@ -93,3 +93,15 @@ chmod 400 <path_to_your_private_key>
 {% endhighlight %}
 
 Then, we'll need to connect to the VM. To do so, run the following command:
+
+{% highlight ruby %}
+```bash
+ssh -i <path_to_your_private_key> ubuntu@<your_public_ipv4_address>
+```
+{% endhighlight %}
+
+And that's it! You are in your VM! You should see something like this:
+
+![SSH](/assets/ssh0.png){:class="img-responsive" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"}
+
+In this case I don't mind sharing my IPv4 address, since it's simply used for internal services I have running on my VM. 
