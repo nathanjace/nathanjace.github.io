@@ -93,9 +93,7 @@ chmod 400 <path_to_your_private_key>
 Then, we'll need to connect to the VM. To do so, run the following command:
 
 {% highlight ruby %}
-```sh
 ssh -i <path_to_your_private_key> ubuntu@<your_public_ipv4_address>
-```
 {% endhighlight %}
 
 And that's it! You are in your VM! You should see something like this:
@@ -106,18 +104,14 @@ In this case I don't mind sharing my IPv4 address, since it's simply used for in
 You run the following command to get all caught up with the latest updates:
 
 {% highlight ruby %}
-```sh
 sudo apt update && sudo apt upgrade -y
-```
 {% endhighlight %}
 
 # Install Apache
 Now that we are all caught up with the latest updates, we can install Apache. To do so, run the following command:
 
 {% highlight ruby %}
-```sh
 sudo apt install apache2
-```
 {% endhighlight %}
 
 You can check your server's state with `sudo service apache2 <option>`, where `<option>` can be `{start|stop|graceful-stop|restart|reload|force-reload|status}`. It's easy to understand what each command does.
@@ -125,26 +119,16 @@ You can check your server's state with `sudo service apache2 <option>`, where `<
 Start your apache2 service and check its status with the following two commands:
 
 {% highlight ruby %}
-```sh
 sudo service apache2 start
-```
-```sh
 sudo service apache2 status
-```
 {% endhighlight %}
 
 When you install and configure apache2, it will automatically open a port in your server (usually 80 for HTTP and 443 for HTTPS) from which you will access the webpage you want to host. If it doesn't, Ubuntu comes with a pretty nifty service: a firewall. To open the port 80 and 443, run the following command:
 
 {% highlight ruby %}
-```sh
 sudo ufw enable
-```
-```sh
 sudo ufw allow 80,443/tcp
-```
-```sh
 sudo ufw reload
-```
 {% endhighlight %}
 
 # Open Firewall and Security List Ports
