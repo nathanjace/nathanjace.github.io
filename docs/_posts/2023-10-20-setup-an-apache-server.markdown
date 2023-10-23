@@ -147,7 +147,7 @@ Since 80 and 443 are used all the times in networking, you might see them alread
 # Set up a domain name
 For this guide we will use a pretty straighforward and easy method to assign a domain name to our server. We will use duckdns. [Duck DNS](https://www.duckdns.org/) is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation because it uses a cron job to renew your IP address automatically.
 
-Go to [https://www.duckdns.org/] and click on one of the various "Sign in with..." buttons. PSA: "use reddit" is discontinued, so anything but that is fine.
+Go to [https://www.duckdns.org/](https://www.duckdns.org/) and click on one of the various "Sign in with..." buttons. PSA: "use reddit" is discontinued, so anything but that is fine.
 
 This is what the screen should look like:
 
