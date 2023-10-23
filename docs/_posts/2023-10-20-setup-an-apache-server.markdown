@@ -87,9 +87,7 @@ To connect to the just created server we will need to use SSH. If you are on Win
 First, we'll need to change the permissions of the private key we just downloaded. To do so, run the following command:
 
 {% highlight ruby %}
-```sh
 chmod 400 <path_to_your_private_key>
-```
 {% endhighlight %}
 
 Then, we'll need to connect to the VM. To do so, run the following command:
